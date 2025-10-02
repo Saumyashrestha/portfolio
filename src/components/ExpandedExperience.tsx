@@ -60,7 +60,16 @@ const ExpandedExperience: React.FC = () => {
 
         <div className="experience-list-container">
           {experiences.map((exp) => (
-            <motion.div key={exp.title} className="experience-item" variants={itemVariants}>
+            <motion.div
+              key={exp.title}
+              className="experience-item"
+              variants={itemVariants}
+              whileHover={{
+                scale: 1.03, // Make it slightly larger
+                boxShadow: "0 8px 30px rgba(0, 0, 0, 0.35)", // Add a more prominent shadow
+                transition: { duration: 0.3, ease: "easeOut" } // Smooth transition
+              }}
+            >
               <div className="experience-header">
                 <h3 className="experience-item-title">{exp.title}, {exp.company}</h3>
                 <span className="experience-item-dates">{exp.dates}</span>

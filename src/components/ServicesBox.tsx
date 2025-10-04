@@ -5,7 +5,7 @@ const projects = [
   { name: 'UniCollab - Learning Platform' },
   { name: 'RS Craftmandu - E-commerce Site' },
   { name: 'KUdos - University Sports Website' },
-  { name: 'Movie4AllMoods - Recommender' },
+  { name: 'Movie4AllMoods - Recommendation System' },
   { name: 'Lung Disease Detection - Machine Learning' },
   { name: 'Right Meal - Diet Planner' },
   { name: 'Tranzac - Fintech Mobile App' },

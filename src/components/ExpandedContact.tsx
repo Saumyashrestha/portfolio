@@ -23,7 +23,7 @@ const ExpandedContact: React.FC = () => {
         {/* Social Links Section */}
         <div className="socials-container">
           <a
-            href="https://github.com/your-username" // <-- Add your GitHub link
+            href="https://github.com/Saumyashrestha" // <-- Add your GitHub link
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
@@ -41,7 +41,7 @@ const ExpandedContact: React.FC = () => {
             <FaLinkedin />
           </a>
           <a
-            href="https://instagram.com/your-username" // <-- Add your Instagram link
+            href="https://instagram.com/saaumyaa_" // <-- Add your Instagram link
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"

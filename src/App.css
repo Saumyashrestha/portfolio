@@ -2,7 +2,6 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* Good practice for consistent box model */
 }
 
 body {
@@ -18,29 +17,27 @@ body {
   box-sizing: border-box;
 }
 
-
-
-/* Main content area, centered */
 .container {
   margin: 2rem 0.75rem;
   padding: 0 1rem;
 }
 
 .custom-cursor {
-  position: fixed; /* Use fixed positioning to stay in the viewport */
+  position: fixed;
+  /* Use fixed positioning to stay in the viewport */
   background-color: transparent;
-  border: 2px solid #B69F66; /* Your site's gold accent color */
+  border: 2px solid #B69F66;
+  /* Your site's gold accent color */
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  
   /* Crucial properties */
-  pointer-events: none; /* Allows you to click 'through' the cursor */
-  z-index: 9999; /* Ensures it's on top of all other content */
-  
+  pointer-events: none;
+  /* Allows you to click 'through' the cursor */
+  z-index: 9999;
+  /* Ensures it's on top of all other content */
   /* Center the cursor on the actual mouse position */
   transform: translate(-50%, -50%);
-  
   /* Smooth transition for hover effects */
   transition: all 0.2s ease-out;
 }
@@ -48,7 +45,8 @@ body {
 /* Style for the cursor when hovering over interactive elements */
 .custom-cursor.hovering {
   transform: translate(-50%, -50%) scale(1.5);
-  background-color: rgba(182, 159, 102, 0.2); /* A semi-transparent fill */
+  background-color: rgba(182, 159, 102, 0.2);
+  /* A semi-transparent fill */
 }
 
 /* Navigation Bar Styling */
@@ -65,9 +63,11 @@ body {
 }
 
 .nav-home-link,
-.nav-home-link:hover{
-  color: #333; /* Sets the text color to the dark gray/black used in the nav bar */
-  text-decoration: none; /* Removes the default underline */
+.nav-home-link:hover {
+  color: #333;
+  /* Sets the text color to the dark gray/black used in the nav bar */
+  text-decoration: none;
+  /* Removes the default underline */
 }
 
 .navigation h1 {
@@ -75,7 +75,6 @@ body {
   font-weight: bold;
 }
 
-/* The Main Bento Grid Container */
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -83,26 +82,16 @@ body {
   gap: 1rem;
 }
 
-/* Default styling for all grid items */
 .grid-item {
   background-color: #E4DBC5;
-  /* The creamy background from the design */
   color: #333;
-  /* Dark text for content inside boxes */
   border-radius: 1rem;
-  /* Rounded corners */
   padding: 1.5rem;
   position: relative;
-  /* For absolute positioning of elements like the SVG */
-  overflow: hidden;
-  /* Ensures content stays within rounded corners */
   display: flex;
-  /* Make items flexible for internal content alignment */
   flex-direction: column;
-  /* Stack content vertically by default */
 }
 
-/* Specific Spanning for Each Box Type (adjust these based on desired layout) */
 .box-hero {
   grid-column: span 5;
   grid-row: span 1;
@@ -112,7 +101,6 @@ body {
 .hero-paragraph {
   font-size: 1.1rem;
   text-align: justify;
-  /* Increases font size from the default */
   margin-bottom: 0;
 }
 
@@ -128,9 +116,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Ensures image covers the area */
   border-radius: 1rem;
-  /* Match parent border radius */
 }
 
 .box-hero,
@@ -202,15 +188,10 @@ body {
 
 .featured-image-container {
   width: 98%;
-  /* This makes the container smaller */
   height: 13rem;
-  /* 128px, equivalent to Tailwind's h-32 */
   margin-bottom: 0.5rem;
-  /* Equivalent to mb-4 */
   border-radius: 0.75rem;
-  /* Equivalent to rounded-md */
   overflow: hidden;
-  /* This is important to make the border-radius apply to the image */
 }
 
 .featured-image-container img {
@@ -220,22 +201,56 @@ body {
 }
 
 .scrollable-list {
-  overflow-y: auto;
-  /* Enables vertical scrolling only when needed */
+  overflow-y: scroll;
+  /* Change 'auto' to 'scroll' */
   padding-right: 0.5rem;
-  /* Adds a little space for the scrollbar */
   max-height: 280px;
 }
 
-@media (max-width: 768px) {
-  .bento-grid {
-    grid-template-columns: 1fr;
-    /* Stack everything in a single column on mobile */
-    grid-auto-rows: minmax(100px, auto);
-    /* Adjust min row height */
+/* Targets the scrollbar itself */
+.scrollable-list::-webkit-scrollbar {
+  width: 8px;
+  /* Set the width of the scrollbar */
+}
+
+/* The "track" (the background of the scrollbar) */
+.scrollable-list::-webkit-scrollbar-track {
+  background: rgba(51, 51, 51, 0.1);
+  /* A subtle track color */
+  border-radius: 10px;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+  background: #B69F66;
+  border-radius: 10px;
+}
+
+/* The handle on hover */
+.scrollable-list::-webkit-scrollbar-thumb:hover {
+  background: #A0522D;
+}
+
+@media (max-width: 1200px) {
+  .scroll-container {
+    height: auto !important; /* Let content define the height */
   }
 
-  /* Reset all spans to 1 column / 1 row for mobile */
+  .bento-animation-container,
+  .sticky-wrapper {
+    height: auto;
+    position: static; /* This removes the 'pinning' effect */
+  }
+
+  /* Allow content to be visible */
+  .sticky-wrapper {
+    overflow: visible;
+  }
+
+  /* Your existing responsive rules for the grid */
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
   .grid-item,
   .box-hero,
   .box-image,
@@ -243,42 +258,45 @@ body {
   .box-about {
     grid-column: span 1;
     grid-row: span 1;
-    padding: 1rem;
-    /* Slightly less padding on mobile */
   }
 
-  .navigation {
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1rem;
+  .box-hero,
+  .box-image,
+  .box-services {
+    height: auto;
   }
-
-  .navigation h1 {
-    font-size: 1.2rem;
-  }
-
+  
   .box-hero h2 {
-    font-size: 1.8rem;
-    /* Smaller font for hero on mobile */
+    font-size: 2rem;
+  }
+
+  .hero-paragraph {
+    font-size: 1rem;
+  }
+
+  .project-name {
+    font-size: 1.1rem;
+  }
+
+  .experience-title {
+    font-size: 1.3rem;
+  }
+
+  .experience-description {
+    font-size: 1rem;
   }
 }
 
-/* --- NEW STYLES ADDED FOR SCROLL ANIMATION --- */
-
 .scroll-container {
-  /* Provides the "track" for the animation. 3 sections = 300vh. */
   height: 300vh;
   position: relative;
 }
 
-/* This is the container for your detailed, full-width sections */
 .expanded-sections-container {
   width: 100%;
   z-index: 1;
-  /* Sits below the sticky bento grid */
 }
 
-/* Styles for the full-width sections */
 .expanded-section {
   min-height: 100vh;
   width: 100%;
@@ -286,7 +304,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6rem 2rem;
+  padding: 2rem 2rem;
   box-sizing: border-box;
   color: #EAEAEA;
 }
@@ -477,7 +495,7 @@ section[data-framer-in-view='true'] .expanded-title::after {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
-  text-align: justify ;
+  text-align: justify;
 }
 
 .project-sticky-image-container {
@@ -504,22 +522,23 @@ section[data-framer-in-view='true'] .expanded-title::after {
   border-radius: 2rem;
   font-weight: 500;
   display: inline-block;
-  /* Fix for span alignment */
 }
 
-/* Ensure the tech list from the old CSS is updated or this is used instead */
 .project-card-tech-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .project-card-sticky {
     padding: 1.5rem;
     height: 85vh;
-    /* Taller on mobile */
+  }
+
+  .expanded-projects-sticky {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .project-sticky-content {
@@ -556,14 +575,18 @@ section[data-framer-in-view='true'] .expanded-title::after {
 }
 
 .expanded-experience .experience-list-container {
-  display: grid; /* Use Grid for layout */
-  grid-template-columns: repeat(2, 1fr); /* Create two equal-width columns */
-  gap: 2.5rem; /* The space between the two columns */
+  display: grid;
+  /* Use Grid for layout */
+  grid-template-columns: repeat(2, 1fr);
+  /* Create two equal-width columns */
+  gap: 2.5rem;
+  /* The space between the two columns */
 }
 
 @media (max-width: 768px) {
   .expanded-experience .experience-list-container {
-    grid-template-columns: 1fr; /* Switch to a single column layout */
+    grid-template-columns: 1fr;
+    /* Switch to a single column layout */
   }
 }
 

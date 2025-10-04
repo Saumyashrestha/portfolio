@@ -24,13 +24,6 @@ const detailedProjects = [
     color: "#CD853F" // Peru
   },
   {
-    title: "Movie4AllMoods - Recommendation System",
-    description: "Movie4allmoods recommends films based on your emotional state. By inputting your current mood, the system generates a curated list of movies that align with your preferences, combining content-based and mood-based filtering.",
-    tech: ["Python", "Django", "Bootstrap", "Scikit-learn", "Cosine Similarity"],
-    image: "/m4am.png",
-    color: "#D2691E" // Chocolate
-  },
-   {
     title: "Lung Disease Detection - Machine Learning",
     description: "This web application applies machine learning to medical imaging for identifying and classifying various lung diseases. It processes chest images to support early detection and assist healthcare professionals with reliable insights.",
     tech: ["Python","Django","React", "CNN", "Tensorflow"],
@@ -38,7 +31,14 @@ const detailedProjects = [
     color: "#B8860B" // DarkGoldenRod
   },
   {
-    title: "Colorize - Deep Learning",
+    title: "Movie4AllMoods - Recommendation System",
+    description: "Movie4allmoods recommends films based on your emotional state. By inputting your current mood, the system generates a curated list of movies that align with your preferences, combining content-based and mood-based filtering.",
+    tech: ["Python", "Django", "Bootstrap", "Scikit-learn", "Cosine Similarity"],
+    image: "/m4am.png",
+    color: "#D2691E" // Chocolate
+  },
+  {
+    title: "Image Colorization - Deep Learning",
     description: "Colorize is a deep learning web app that brings black-and-white photos to life. Using convolutional neural networks (CNNs), it analyzes grayscale images and generates realistic colorized versions, making it useful for restoring old photographs and exploring creative applications of AI.",
     tech: ["Python", "Pytorch", "Ski-Image", "U-Net"],
     image: "/colorize.png",

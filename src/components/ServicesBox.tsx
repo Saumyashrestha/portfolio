@@ -5,11 +5,11 @@ const projects = [
   { name: 'UniCollab - Learning Platform' },
   { name: 'RS Craftmandu - E-commerce Site' },
   { name: 'KUdos - University Sports Website' },
-  { name: 'Movie4AllMoods - Recommendation System' },
   { name: 'Lung Disease Detection - Machine Learning' },
+  { name: 'Movie4AllMoods - Recommendation System' },
+  { name: 'Image Colorization - Deep Learning' },
   { name: 'Right Meal - Diet Planner' },
   { name: 'Tranzac - Fintech Mobile App' },
-  { name: 'Colorize - Deep Learning' },
 ];
 
 const ServicesBox: React.FC = () => {

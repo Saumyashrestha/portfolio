@@ -41,7 +41,7 @@ const detailedProjects = [
     title: "Colorize - Deep Learning",
     description: "Colorize is a deep learning web app that brings black-and-white photos to life. Using convolutional neural networks (CNNs), it analyzes grayscale images and generates realistic colorized versions, making it useful for restoring old photographs and exploring creative applications of AI.",
     tech: ["Python", "Pytorch", "Ski-Image", "U-Net"],
-    image: "/colorize.jpg",
+    image: "/colorize.png",
     color:"#8B5A2B"
   },
   {

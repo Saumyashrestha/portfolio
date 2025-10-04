@@ -32,7 +32,7 @@ const ExpandedContact: React.FC = () => {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/your-username" // <-- Add your LinkedIn link
+            href="https://www.linkedin.com/in/saumya-shrestha-8a23b6249/" // <-- Add your LinkedIn link
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"

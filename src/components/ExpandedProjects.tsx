@@ -33,7 +33,7 @@ const detailedProjects = [
   {
     title: "Movie4AllMoods - Recommendation System",
     description: "Movie4allmoods recommends films based on your emotional state. By inputting your current mood, the system generates a curated list of movies that align with your preferences, combining content-based and mood-based filtering.",
-    tech: ["Python", "Django", "Bootstrap", "Scikit-learn", "Cosine Similarity"],
+    tech: ["Python", "Django", "Bootstrap","PostgreSQL", "Scikit-learn", "Cosine Similarity"],
     image: "/m4am.png",
     color: "#D2691E" // Chocolate
   },

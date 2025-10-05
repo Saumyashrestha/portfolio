@@ -129,6 +129,7 @@ body {
   grid-column: span 4;
   grid-row: span 2;
   height: 42rem;
+  padding-top: 0.25rem !important;
   /* Tallest box, as in the reference */
 }
 

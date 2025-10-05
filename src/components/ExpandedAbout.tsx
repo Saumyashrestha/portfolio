@@ -2,13 +2,12 @@
 import React, { useRef } from 'react';
 import { motion, useInView, type Variants } from 'framer-motion';
 
-// Define the animation variants
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3, // Time delay between each child animating in
+      staggerChildren: 0.3, 
       delayChildren: 0.2,
     },
   },
@@ -27,10 +26,7 @@ const itemVariants: Variants = {
 };
 
 const ExpandedAbout: React.FC = () => {
-  // A ref to track the section element for the in-view trigger
   const sectionRef = useRef<HTMLElement>(null);
-
-  // This hook returns true when the referenced element is in the viewport
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
 
   return (
@@ -46,12 +42,11 @@ const ExpandedAbout: React.FC = () => {
           About Me
         </motion.h1>
         <motion.p className="expanded-paragraph" variants={itemVariants}>
-          As a final-year Computer Engineering student, I thrive at the intersection of logical problem-solving and creative design. My journey began with a curiosity for how things work, which quickly evolved into a passion for building elegant and intuitive digital experiences. I believe the best technology feels invisible, bridging the gap between complex systems and human interaction.
+          As a final-year Computer Engineering student, I thrive at the intersection of logical problem-solving and creative design. My journey began with a curiosity for how things work, which evolved into a passion for building elegant and intuitive digital experiences. I’m also interested in AI and its potential to make technology more adaptive and human-centered, bridging the gap between complex systems and natural interaction.
         </motion.p>
         <motion.p className="expanded-paragraph" variants={itemVariants}>
-          My experience at UniCollab and IT Meet has solidified my skills in frontend development, particularly with TypeScript and modern CSS, and taught me the importance of clear communication and documentation in a collaborative environment. I am driven by the challenge of turning an idea into a functional, beautiful product that people love to use.
+          My experience at UniCollab and IT Meet has strengthened my frontend development skills and deepened my appreciation for clear communication and documentation in collaborative work. I’m driven by the challenge of turning ideas into functional, meaningful products and am increasingly drawn to exploring how AI can enhance creativity and user experience.
         </motion.p>
-
         <motion.div variants={itemVariants}>
           <h3 className="about-subtitle">My Education</h3>
           <div className="education-list">

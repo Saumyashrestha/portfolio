@@ -7,7 +7,7 @@ const detailedProjects = [
     description: "Unicollab is a web-based platform created to bring university students together for academic and collaborative purposes. It enables users to share study materials, form project teams, and network with peers across departments.",
     tech: ["TypeScript", "React", "SCSS", "Node.js"],
     image: "/unicollab.png",
-    color: "#000", // SaddleBrown
+    color: "#8B4513" // SaddleBrown
   },
   {
     title: "RS Craftmandu - E-commerce",
@@ -105,7 +105,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, scrollYProgre
                     Documentation
                   </a>
                 </div>
-
+                
             </div>
             <div className="project-sticky-image-container">
                 <img src={project.image} alt={project.title} />

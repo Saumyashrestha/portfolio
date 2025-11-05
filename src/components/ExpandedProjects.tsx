@@ -7,7 +7,7 @@ const detailedProjects = [
     description: "Unicollab is a web-based platform created to bring university students together for academic and collaborative purposes. It enables users to share study materials, form project teams, and network with peers across departments.",
     tech: ["TypeScript", "React", "SCSS", "Node.js"],
     image: "/unicollab.png",
-    color: "#8B4513" // SaddleBrown
+    color: "#000", // SaddleBrown
   },
   {
     title: "RS Craftmandu - E-commerce",
@@ -94,6 +94,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, scrollYProgre
                 <div className="project-card-tech-list">
                   {project.tech.map(tech => <span key={tech} className="tech-badge-sticky">{tech}</span>)}
                 </div>
+
+                <div className="project-sticky-button-container">
+                  <a 
+                    href="https://drive.google.com/drive/u/0/folders/1aTAKb9eUY4jD7beujvO4bWrrsmoisIGM"
+                    target="_blank" // Opens the link in a new tab
+                    rel="noopener noreferrer" // Security best practice for external links
+                    className="project-sticky-button" // Add CSS for this class to style it
+                  >
+                    Documentation
+                  </a>
+                </div>
+
             </div>
             <div className="project-sticky-image-container">
                 <img src={project.image} alt={project.title} />

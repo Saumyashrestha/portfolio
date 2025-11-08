@@ -7,14 +7,16 @@ const detailedProjects = [
     description: "Unicollab is a web-based platform created to bring university students together for academic and collaborative purposes. It enables users to share study materials, form project teams, and network with peers across departments.",
     tech: ["TypeScript", "React", "SCSS", "Node.js"],
     image: "/unicollab.png",
-    color: "#8B4513" // SaddleBrown
+    color: "#8B4513", // SaddleBrown
+    liveSite: "https://unicollab.org" // <-- REPLACE THIS URL
   },
   {
     title: "RS Craftmandu - E-commerce",
     description: "RS Craftmandu is an e-commerce website dedicated to showcasing and selling authentic handmade Nepali crafts. The platform connects artisans with customers, providing a digital marketplace for products such as traditional art and cultural goods.",
     tech: ["React", "Tailwind CSS", "Firebase"],
     image: "/rscraftmandu.png",
-    color: "#A0522D" // Sienna
+    color: "#A0522D", // Sienna
+    liveSite: "https://rscraftmandu.netlify.app" // <-- REPLACE THIS URL
   },
   {
     title: "KUdos - University Sports Website",
@@ -61,7 +63,8 @@ const detailedProjects = [
 ];
 
 interface ProjectCardProps {
-  project: (typeof detailedProjects)[0];
+  // Add liveSite to the project type definition
+  project: (typeof detailedProjects)[0] & { liveSite?: string };
   index: number;
   scrollYProgress: MotionValue<number>;
   totalProjects: number;
@@ -69,12 +72,19 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, scrollYProgress, totalProjects }) => {
   // Create a transform mapping for the scale of the card
-  // It starts larger and shrinks as it gets covered by the next card
   const scale = useTransform(
     scrollYProgress,
     [index / totalProjects, (index + 1) / totalProjects],
     [1, 0.85]
   );
+
+  // --- Conditional Button Logic ---
+  const isDeployed = project.liveSite;
+  const buttonHref = isDeployed 
+    ? project.liveSite 
+    : "https://drive.google.com/drive/u/0/folders/1aTAKb9eUY4jD7beujvO4bWrrsmoisIGM";
+  const buttonText = isDeployed ? "View Live Site" : "Documentation";
+  // --- End of Logic ---
   
   return (
     // This is the sticky container for each card
@@ -97,12 +107,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index, scrollYProgre
 
                 <div className="project-sticky-button-container">
                   <a 
-                    href="https://drive.google.com/drive/u/0/folders/1aTAKb9eUY4jD7beujvO4bWrrsmoisIGM"
-                    target="_blank" // Opens the link in a new tab
-                    rel="noopener noreferrer" // Security best practice for external links
-                    className="project-sticky-button" // Add CSS for this class to style it
+                    href={buttonHref} // Use the conditional href
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="project-sticky-button"
                   >
-                    Documentation
+                    {buttonText} {/* Use the conditional text */}
                   </a>
                 </div>
                 

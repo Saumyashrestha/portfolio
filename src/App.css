@@ -233,13 +233,15 @@ body {
 
 @media (max-width: 1200px) {
   .scroll-container {
-    height: auto !important; /* Let content define the height */
+    height: auto !important;
+    /* Let content define the height */
   }
 
   .bento-animation-container,
   .sticky-wrapper {
     height: auto;
-    position: static; /* This removes the 'pinning' effect */
+    position: static;
+    /* This removes the 'pinning' effect */
   }
 
   /* Allow content to be visible */
@@ -266,7 +268,7 @@ body {
   .box-services {
     height: auto;
   }
-  
+
   .box-hero h2 {
     font-size: 2rem;
   }
@@ -533,21 +535,23 @@ section[data-framer-in-view='true'] .expanded-title::after {
 
 .project-sticky-button-container {
   /* Adds space between the tech list and the button */
-  margin-top: 2.5rem; 
+  margin-top: 2.5rem;
   display: flex;
   gap: 1rem;
 }
 
 /* 2. The button link itself */
 .project-sticky-button {
-  display: inline-block; /* Allows padding and margins */
-  text-decoration: none; /* Removes the link underline */
-  background-color: transparent; 
+  display: inline-block;
+  /* Allows padding and margins */
+  text-decoration: none;
+  /* Removes the link underline */
+  background-color: transparent;
   border: 2px solid rgba(255, 255, 255, 0.7);
-  color: #FFFFFF; 
-  border-radius: 8px; 
-  padding: 0.5rem 1.25rem; 
-  font-size: 0.95rem;
+  color: #FFFFFF;
+  border-radius: 8px;
+  padding: 0.5rem 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
   transition: all 0.3s ease;
 }
@@ -555,10 +559,10 @@ section[data-framer-in-view='true'] .expanded-title::after {
 /* 3. The hover effect */
 .project-sticky-button:hover {
   /* Make it slightly more opaque */
-  background-color: #FFFFFF; 
-  border-color: #FFFFFF; 
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
   color: #8B4513;
-  transform: translateY(-2px); 
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {

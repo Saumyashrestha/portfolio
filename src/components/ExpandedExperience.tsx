@@ -74,7 +74,6 @@ const ExpandedExperience: React.FC = () => {
                 <h3 className="experience-item-title">{exp.title}, {exp.company}</h3>
                 <span className="experience-item-dates">{exp.dates}</span>
               </div>
-              
               <h4 className="experience-item-subtitle">My Role</h4>
               <p className="experience-item-details">{exp.role}</p>
 
